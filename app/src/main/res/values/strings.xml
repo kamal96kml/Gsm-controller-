@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GSM Controller</string>
+    <string name="app_title_ar">GSM Controller</string>
+    <string name="phone_number_label">رقم هاتف الشريحة (SIM)</string>
+    <string name="passcode_label">رمز المرور (PIN)</string>
+    <string name="save_credentials">حفظ الإعدادات</string>
+    <string name="btn_start_sms">تشغيل المضخة (SMS)</string>
+    <string name="btn_stop_sms">إيقاف المضخة (SMS)</string>
+    <string name="btn_start_call">تشغيل عن طريق الاتصال</string>
+    <string name="check_status">فحص حالة الجهاز</string>
+    <string name="check_timer">فحص مؤقت التتابع</string>
+    <string name="custom_command">أمر مخصص (AT/SMS)</string>
+    <string name="send_command">إرسال الأمر</string>
+    <string name="activity_feed">سجل العمليات المباشر</string>
+    <string name="no_activities">لا توجد عمليات مسجلة بعد</string>
+    <string name="pump_running">المضخة قيد التشغيل</string>
+    <string name="pump_stopped">المضخة متوقفة</string>
+</resources>

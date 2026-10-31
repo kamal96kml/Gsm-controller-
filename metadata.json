@@ -1,0 +1,6 @@
+{
+  "name": "GSM Controller",
+  "description": "Mobile glassmorphic dashboard to remotely control a solar pump via GSM RTU5024 with direct call and SMS commands.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
