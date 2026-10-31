@@ -430,22 +430,11 @@
       return (
         <div className="min-h-screen max-w-lg mx-auto px-4 py-5 pb-16 flex flex-col gap-4">
           
-          {/* 1. Header Bar: SVG Logo (Solar/Water + GSM waves) + Title "GSM Controller" + Settings Gear Icon */}
+          {/* 1. Header Bar: Custom Brand Logo + Title "GSM Controller" + Settings Gear Icon */}
           <header className="glass-panel rounded-2xl px-5 py-4 flex items-center justify-between border-cyan-500/20 shadow-lg">
             <div className="flex items-center gap-3">
-              {/* High-end vector SVG logo combining solar/water pump symbol with wireless GSM waves */}
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500/30 to-emerald-500/30 border border-cyan-400/30 flex items-center justify-center shadow-inner relative overflow-hidden">
-                <svg className="w-8 h-8" viewBox="0 0 36 36" fill="none">
-                  {/* Sun rays & solar disc */}
-                  <circle cx="18" cy="18" r="4.5" fill="#38bdf8" />
-                  <path d="M18 6v3M18 27v3M6 18h3M27 18h3" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
-                  <path d="m9.5 9.5 2.1 2.1M24.4 24.4l2.1 2.1M9.5 26.5l2.1-2.1M24.4 11.6l2.1-2.1" stroke="#38bdf8" strokeWidth="1.8" strokeLinecap="round" />
-                  {/* Water drop outline */}
-                  <path d="M18 10c0 0-7 8.5-7 13.5a7 7 0 0 0 14 0C25 18.5 18 10 18 10Z" stroke="#10b981" strokeWidth="2.2" strokeLinejoin="round" fill="rgba(16, 185, 129, 0.15)" />
-                  {/* Wireless GSM radio waves */}
-                  <path d="M14 27.5c2.4 1.2 5.6 1.2 8 0" stroke="#f59e0b" strokeWidth="2.2" strokeLinecap="round" />
-                  <path d="M11.5 30.5c4 2 9 2 13 0" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/30 flex items-center justify-center shadow-inner relative overflow-hidden p-1">
+                <img src="gsm_logo.png" onError={(e) => { e.currentTarget.src = "public/assets/gsm_logo.png"; }} alt="GSM Controller Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h1 className="text-xl font-black text-white tracking-wide">GSM Controller</h1>
@@ -930,11 +919,9 @@
           {/* Developer Rights & Contact Card */}
           <footer className="glass-panel rounded-2xl p-4 text-center mt-2 border-cyan-500/20">
             <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center justify-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+              <div className="flex items-center justify-center gap-2.5">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-cyan-400/50 flex items-center justify-center overflow-hidden p-0.5 shadow-md">
+                  <img src="gsm_logo.png" onError={(e) => { e.currentTarget.src = "public/assets/gsm_logo.png"; }} alt="عبدالهادي كمال" className="w-full h-full object-cover rounded-full" />
                 </div>
                 <div>
                   <div className="text-[11px] text-slate-400 font-medium">حقوق التطوير والبرمجة:</div>

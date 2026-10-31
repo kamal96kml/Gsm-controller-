@@ -9,6 +9,7 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -68,10 +69,12 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -81,6 +84,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.R
 import com.example.data.ActivityLog
 import com.example.data.SolarPumpPreferences
 import com.example.ui.theme.AmberTimer
@@ -245,24 +249,19 @@ fun SolarPumpNativeDashboard(
                             ) {
                                 Box(
                                     modifier = Modifier
-                                        .size(44.dp)
+                                        .size(46.dp)
                                         .clip(RoundedCornerShape(13.dp))
-                                        .background(
-                                            Brush.linearGradient(
-                                                listOf(
-                                                    CyanPrimary.copy(alpha = 0.35f),
-                                                    EmeraldStart.copy(alpha = 0.35f)
-                                                )
-                                            )
-                                        )
-                                        .border(1.dp, CyanPrimary.copy(alpha = 0.4f), RoundedCornerShape(13.dp)),
+                                        .background(Color.White.copy(alpha = 0.08f))
+                                        .border(1.dp, CyanPrimary.copy(alpha = 0.45f), RoundedCornerShape(13.dp)),
                                     contentAlignment = Alignment.Center
                                 ) {
-                                    Icon(
-                                        imageVector = Icons.Default.Wifi,
-                                        contentDescription = "GSM",
-                                        tint = CyanPrimary,
-                                        modifier = Modifier.size(24.dp)
+                                    Image(
+                                        painter = painterResource(id = R.drawable.ic_gsm_logo),
+                                        contentDescription = "GSM Controller Logo",
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(RoundedCornerShape(11.dp)),
+                                        contentScale = ContentScale.Fit
                                     )
                                 }
 
@@ -1387,17 +1386,19 @@ fun SolarPumpNativeDashboard(
                             ) {
                                 Box(
                                     modifier = Modifier
-                                        .size(38.dp)
+                                        .size(42.dp)
                                         .clip(CircleShape)
-                                        .background(CyanPrimary.copy(alpha = 0.2f))
-                                        .border(1.dp, CyanPrimary.copy(alpha = 0.5f), CircleShape),
+                                        .background(Color.White.copy(alpha = 0.08f))
+                                        .border(1.5.dp, CyanPrimary.copy(alpha = 0.6f), CircleShape),
                                     contentAlignment = Alignment.Center
                                 ) {
-                                    Icon(
-                                        imageVector = Icons.Default.Person,
-                                        contentDescription = "Developer",
-                                        tint = CyanPrimary,
-                                        modifier = Modifier.size(20.dp)
+                                    Image(
+                                        painter = painterResource(id = R.drawable.ic_gsm_logo),
+                                        contentDescription = "Developer Logo",
+                                        modifier = Modifier
+                                            .size(38.dp)
+                                            .clip(CircleShape),
+                                        contentScale = ContentScale.Crop
                                     )
                                 }
 
