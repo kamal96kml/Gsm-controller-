@@ -683,6 +683,24 @@ fun SolarPumpNativeDashboard(
                     }
                 }
 
+                // Pump Run Timer & Stop Reminder (المؤقت الذكي للتذكير بإيقاف المضخة والرنين)
+                item {
+                    PumpTimerCard(
+                        passcode = passcode,
+                        onStopPump = {
+                            triggerHapticFeedback()
+                            val cmd = "$passcode#OFF#"
+                            addActionLog("إيقاف المضخة (تنبيه المؤقت)", cmd, "stop", "SMS")
+                            triggerSms(phoneNumber, cmd)
+                            pumpStatus = "stopped"
+                            prefs.pumpStatus = "stopped"
+                        },
+                        onTimerFinishedLog = { minutes ->
+                            addActionLog("انتهاء مؤقت التشغيل", "رنين تنبيه إيقاف المضخة بعد $minutes دقيقة", "stop", "مؤقت")
+                        }
+                    )
+                }
+
                 // Quick Diagnostics (Status 4466#EE#, Timer 4466#T#, Signal 4466#CSQ#)
                 item {
                     GlassContainer(

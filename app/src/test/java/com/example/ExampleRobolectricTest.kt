@@ -92,5 +92,14 @@ class ExampleRobolectricTest {
         val logs = prefs.getLogs()
         assertTrue(logs.isNotEmpty())
         assertEquals("1234#ON#", logs[0].command)
+
+        // Test timer preferences
+        prefs.saveTimer(1800L, System.currentTimeMillis() + 1800000L)
+        assertTrue(prefs.isTimerActive)
+        assertEquals(1800L, prefs.timerDurationSeconds)
+        assertTrue(prefs.timerEndTimeMs > 0L)
+
+        prefs.clearTimer()
+        assertEquals(false, prefs.isTimerActive)
     }
 }

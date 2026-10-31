@@ -34,6 +34,34 @@ class SolarPumpPreferences(context: Context) {
         get() = prefs.getString("pump_status", "unknown") ?: "unknown"
         set(value) = prefs.edit().putString("pump_status", value).apply()
 
+    var timerEndTimeMs: Long
+        get() = prefs.getLong("timer_end_time_ms", 0L)
+        set(value) = prefs.edit().putLong("timer_end_time_ms", value).apply()
+
+    var timerDurationSeconds: Long
+        get() = prefs.getLong("timer_duration_seconds", 0L)
+        set(value) = prefs.edit().putLong("timer_duration_seconds", value).apply()
+
+    var isTimerActive: Boolean
+        get() = prefs.getBoolean("is_timer_active", false)
+        set(value) = prefs.edit().putBoolean("is_timer_active", value).apply()
+
+    fun saveTimer(durationSeconds: Long, endTimeMs: Long) {
+        prefs.edit()
+            .putLong("timer_duration_seconds", durationSeconds)
+            .putLong("timer_end_time_ms", endTimeMs)
+            .putBoolean("is_timer_active", true)
+            .apply()
+    }
+
+    fun clearTimer() {
+        prefs.edit()
+            .remove("timer_duration_seconds")
+            .remove("timer_end_time_ms")
+            .putBoolean("is_timer_active", false)
+            .apply()
+    }
+
     fun getLogs(): List<ActivityLog> {
         val raw = prefs.getString("logs_json", null) ?: return listOf(
             ActivityLog(
